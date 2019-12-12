@@ -1,18 +1,81 @@
 body {
-  background: #161616;
-  color: #bdbdbd;
-  font-weight: 300;
-  height: 100vh;
-  margin: 0;
-  /* display: flex; */
+  background: #dbee97;
+  color: #240808;
   align-items: center;
-  justify-content: center;
   text-align: center;
-  font-family: Helvetica neue, roboto;
+  font-family: Baloo Tammudu, roboto;
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+} 
+
+#timer,
+#flags,
+#flagger {
+
+  font-family: Baloo Tammudu, roboto;
+  font-size: 2.5vmin;
+  border: none;
+  border-radius: 11vmin;
+  width: 7em;
+  outline: none;
+  background: #edf7b5;
+
+}
+
+#flagger {
+  background: rgba(243, 202, 125, 0.918);
+}
+
+#flagger:active {
+  background: rgb(245, 183, 113);
+}
+
+#newgame {
+  color: rgb(49, 65, 44);
+}
+
+#newgame:active {
+  color: rgb(117, 168, 50);
+}
+
+#wrapbar {
+  width: 70vmin;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#wrapbar > div {
+  display: inline-block;
+}
+
+.space {
+  height: width;
+  width: 3.5vmin;
+  margin: 0 1%;
+}
+
+#space-container {
+  height: 80vmin;
+  margin: 15px;
+  float: center;
+}
+
+#congrats {
+  font-size: 3vmin;
+  color: rgb(102, 141, 84);
 }
 
 h1 {
   font-weight: 200;
-  font-style: 26px;
-  margin: 10px;
+  font-size: 10vmin;
+  margin: 0px;
+  color: rgb(2, 2, 2);
 }
