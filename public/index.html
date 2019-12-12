@@ -1,17 +1,22 @@
 <html>
-<head>
-    <link href="style.css" rel="stylesheet">
-    <script src="jquery.min.js"></script>
-</head>
-<body>
-<div>
-    <h1>Demo</h1>
-</div>
-<div>
-    <img src="node-png-13.png"
-         alt="NodeJS logo">
-    <h1 id="msg"></h1>
-</div>
-</body>
-<script src="script.js"></script>
+
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=Baloo Tammudu' rel='stylesheet'>
+  </head>
+
+  <body onLoad="init()" style="width">
+    <div>
+      <h1 id="newgame">MineField</h1>
+      <div id="congrats">Click MineField to start a new game!</div>
+      <div id="wrapbar" style="margin: 0 auto;">
+        <div id="flags" style="float: left;"> Flags: 10 </div>
+        <div id="flagger" onclick="flagClick()" style="margin: 0 auto;">Flag</div>
+        <div id="timer" style="float: right;"> Time: 0:00 </div>
+      </div>
+      <div id="space-container"></div>
+    </div>
+
+  </body>
+  <script src="script.js"></script>
+
 </html>
