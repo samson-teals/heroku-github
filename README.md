@@ -1,5 +1,7 @@
 # GitHub and Heroku
 
+uwu uwu 
+
 In this lab, we're going to connect GitHub to Heroku and use Heroku to deploy our code.
 
 We'll end up with a web server implemented in NodeJS which will serve files in the `public` folder.
@@ -69,3 +71,5 @@ Once your changes are pushed to GitHub, go back to Heroku and `Deploy Branch` ag
 If everything is working properly, you will see your changes in GitHub, but also deployed to your app in Heroku.
 
 Hopefully, you can see how GitHub and Heroku are integrated by now. Try replacing the files in the `public` folder with your minesweeper game!
+
+uwu uwu
