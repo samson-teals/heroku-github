@@ -54,6 +54,8 @@ Click on `Deploy Branch` and wait for Heroku to:
 - Release phase
 - Deploy to Heroku
 
+uwu uwu
+
 Click the `Settings` button to bring you to a page like, e.g. https://dashboard.heroku.com/apps/bbys-teals-2019-example/settings.
 About halfway down this page in the `Domains` section, you will find a link to your app on the internet, e.g. https://bbys-teals-2019-example.herokuapp.com/.
 
