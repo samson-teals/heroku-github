@@ -3,7 +3,8 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "^4.17"
+    "express": "^4.17",
+    "pg": "^7.17"
   },
   "engines": {
     "node": "10.x"
