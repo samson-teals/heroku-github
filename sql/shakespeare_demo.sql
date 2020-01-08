@@ -29,7 +29,7 @@ DROP TABLE IF EXISTS public."character";
 DROP TABLE IF EXISTS public.chapter;
 SET default_tablespace = '';
 
-SET default_table_access_method = heap;
+-- SET default_table_access_method = heap;
 
 --
 -- Name: chapter; Type: TABLE; Schema: public; Owner: -
