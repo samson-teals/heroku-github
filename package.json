@@ -3,10 +3,11 @@
     "start": "node app.js"
   },
   "dependencies": {
-    "express": "^4.17",
+    "fastify": "^2.11",
+    "fastify-static": "^2.5",
     "pg": "^7.17"
   },
   "engines": {
-    "node": "10.x"
+    "node": "12.x"
   }
 }

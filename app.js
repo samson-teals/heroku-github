@@ -1,14 +1,24 @@
 const fs = require('fs');
 
-const express = require('express');
-const app = express();
+const fastify = require('fastify');
+const fastify_static = require('fastify-static');
+const path = require('path');
+
+// inject sendHtml function into response object
+const fastify_reply = require('fastify/lib/reply');
+fastify_reply.prototype.sendHtml = function(html) {
+  this.type('text/html; charset=utf-8').send(html);
+}
+
+const app = fastify();
 const port = process.env.PORT || 3000;
 
 const sql_loader = require('./sql_loader');
 
-app.use(express.static('public', {
+app.register(fastify_static, {
+  root: path.join(__dirname, 'public'),
   index: 'index.html'
-}));
+})
 
 app.get('/hello', (req, res) => res.send('Hello World!'));
 
@@ -25,7 +35,7 @@ app.get('/listdb', async (req, res) => {
   });
   buf += '</ul>list done';
 
-  res.send(buf);
+  res.sendHtml(buf);
 });
 
 app.get('/initdb/:templateName', async (req, res) => {
@@ -34,7 +44,17 @@ app.get('/initdb/:templateName', async (req, res) => {
   const status = await loader.reset(templateName);
   const statusStr = status ? 'done' : 'failed';
 
-  res.send(`init ${statusStr}: ${templateName}`);
+  res.sendHtml(`init ${statusStr}: ${templateName}`);
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+// fastify examples
+app.get('/example/:file(^\\d+).txt', async (req, res) => {
+  return req.params.file;
+});
+
+app.get('/example/near/:lat-:lng/radius/:r', async (req, res) => {
+  return `lat: ${req.params.lat}, long ${req.params.lng}, radius: ${req.params.r}`;
+});
+
+// start application server
+app.listen(port, '0.0.0.0', () => console.log(`Example app listening on port ${port}!`));
