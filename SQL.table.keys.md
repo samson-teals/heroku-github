@@ -135,7 +135,9 @@ CREATE TABLE kvx (
   - try both `ON UPDATE CASCADE` and `ON DELETE CASCADE` on your table's foreign key into `kv.key`
   - try updating a `key` value in the `kv` table
   - try deleting a `key` value in the `kv` table
-  
+
+## Data modelling
+
 If you have time (or next class), think about a system of tables that can model a school's database including:
 - students
 - teachers
@@ -146,3 +148,26 @@ If you have time (or next class), think about a system of tables that can model 
 What fields would go in those tables, and what would be the primary and foreign key relationships?
 
 What would the database look like for the BC education system if the province wanted to track things across multiple schools?
+
+## Working with your data model
+
+"Test" your model by adding some data into your tables and running a few joins to see what you get. e.g.
+- list all the grades for a student
+- list all the courses taught by a teacher
+- list all the students taught by a teacher
+- list all the grades assigned by a teacher
+
+Once you've extended your data model to include multiple schools:
+- list all the grades given in a school
+
+If you're feeling adventurous, look into SQL aggregate operations such as count, sum, and avg (and more) and see what you can do with it.
+You may want to use these aggregate operations with `GROUP BY`.
+
+For example, write queries to discover
+- which teachers give the highest average grades
+- which courses do students get the highest average grades in
+- which schools give the highest average grades
+
+You may need to modify your data model to include year:
+- how do grades in a course compare over a set of years
+- how consistent are teachers from year to year (e.g. use `STDDEV`)
